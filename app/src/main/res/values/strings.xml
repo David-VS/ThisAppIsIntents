@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">This App Is Intents</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_btn_detination">Go To Destination</string>
+    <string name="str_btn_website">Open Homepage</string>
+    <string name="str_btn_location">Where are you?</string>
+</resources>
