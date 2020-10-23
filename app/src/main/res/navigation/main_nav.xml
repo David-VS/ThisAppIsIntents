@@ -15,5 +15,9 @@
     </fragment>
     <fragment
         android:id="@+id/destinationFragment"
-        android:name="be.ehb.thisappisintents.fragments.DestinationFragment" />
+        android:name="be.ehb.thisappisintents.fragments.DestinationFragment" >
+        <argument
+            android:name="persoon"
+            app:argType="be.ehb.thisappisintents.model.Persoon" />
+    </fragment>
 </navigation>
