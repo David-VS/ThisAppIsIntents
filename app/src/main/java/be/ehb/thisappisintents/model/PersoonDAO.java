@@ -26,7 +26,7 @@ public class PersoonDAO {
     }
 
     //eigen waarden
-    private ArrayList<Persoon> personen = new ArrayList<>();
+    private final ArrayList<Persoon> personen = new ArrayList<>();
 
     public ArrayList<Persoon> getPersonen() {
         return personen;

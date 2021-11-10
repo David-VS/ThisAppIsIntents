@@ -23,7 +23,7 @@ public class DestinationFragment extends Fragment {
 
     private Persoon geselecteerdPersoon;
 
-    private View.OnClickListener homepageListener = new View.OnClickListener() {
+    private final View.OnClickListener homepageListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Uri page = Uri.parse(geselecteerdPersoon.getHomepage());
@@ -33,7 +33,7 @@ public class DestinationFragment extends Fragment {
         }
     };
 
-    private View.OnClickListener callListener = new View.OnClickListener() {
+    private final View.OnClickListener callListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(Intent.ACTION_DIAL);
@@ -59,15 +59,13 @@ public class DestinationFragment extends Fragment {
         Button btnCall = rootView.findViewById(R.id.btn_call);
         Button btnHomepage = rootView.findViewById(R.id.btn_homepage);
 
-        geselecteerdPersoon = (Persoon) getArguments().getSerializable("persoon");
-
-
-        //waarden gebruiken
-        tvNaam.setText(geselecteerdPersoon.getNaam());
-
-        btnHomepage.setOnClickListener(homepageListener);
-        btnCall.setOnClickListener(callListener);
-
+        if (getArguments() != null) {
+            geselecteerdPersoon = (Persoon) getArguments().getSerializable("persoon");
+            //waarden gebruiken
+            tvNaam.setText(geselecteerdPersoon.getNaam());
+            btnHomepage.setOnClickListener(homepageListener);
+            btnCall.setOnClickListener(callListener);
+        }
         return rootView;
     }
 }

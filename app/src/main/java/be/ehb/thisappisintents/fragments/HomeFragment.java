@@ -22,7 +22,7 @@ public class HomeFragment extends Fragment {
     private Spinner spiPersonen;
     private Button btnDetails;
     //listener
-    private View.OnClickListener detailListener = new View.OnClickListener() {
+    private final View.OnClickListener detailListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Persoon geselecteerd = (Persoon) spiPersonen.getSelectedItem();
@@ -35,7 +35,6 @@ public class HomeFragment extends Fragment {
     };
 
     public HomeFragment() {
-
     }
 
     public static HomeFragment newInstance() {
@@ -51,7 +50,6 @@ public class HomeFragment extends Fragment {
         //verwijzingen naar wat in scherm zit
         spiPersonen = rootView.findViewById(R.id.spi_personen);
         btnDetails = rootView.findViewById(R.id.btn_details);
-
         //spinner opvullen
         //aanmaken adapter, dit bevat de layout voor rijen en array met gegevens
         ArrayAdapter<Persoon> adapter = new ArrayAdapter<>(getActivity(),
@@ -59,7 +57,6 @@ public class HomeFragment extends Fragment {
                 PersoonDAO.getInstance().getPersonen());
         //adapter aan spinner vasthangen
         spiPersonen.setAdapter(adapter);
-
         //listener voor button
         btnDetails.setOnClickListener(detailListener);
 
